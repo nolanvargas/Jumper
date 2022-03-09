@@ -1,5 +1,5 @@
-from word import Word
-from jumper import Jumper
+from jumper.Word import Word
+from jumper.Jumper import Jumper
 
 class Director:
 
