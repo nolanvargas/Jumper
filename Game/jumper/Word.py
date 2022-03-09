@@ -5,6 +5,7 @@ class word:
         with open("formatted_data.csv", "r") as file:
             wordCSV = next(file)
         self._words = [wordCSV]
+        print(self._words)
 
 
     def createEasy(self): #3-5 word length
@@ -19,6 +20,6 @@ class word:
     def _filterList(self, minLength, maxLength):
         list = []
         for item in self._words:
-            if len(item[1]) >= minLength and len(item[1]) <= maxLength:
-                list.append(item[1])
+            if len(item[0]) >= minLength and len(item[0]) <= maxLength:
+                list.append(item[0])
         return list
