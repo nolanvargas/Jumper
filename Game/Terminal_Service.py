@@ -3,7 +3,7 @@ class terminalService:
     def letterPrompt(self, prompt): #Gets the input called from director. Prompt should be asking for a letter.
         return input(prompt)
 
-    def getDifficultyInput(self, prompt): #Sets up the terminal input for difficulty selection.
+    def _getDifficultyInput(self, prompt): #Sets up the terminal input for difficulty selection.
         return input (prompt)
 
     def showJumper(self, jumperDict): #Gets the jumper to show the player how much longer he or she has until they lose.
