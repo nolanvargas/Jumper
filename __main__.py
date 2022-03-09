@@ -1,1 +1,4 @@
-from game.jumper.director import Director
+from game.jumper.word import Word
+word = Word()
+list = word.createEasy()
+print(list) #testing 

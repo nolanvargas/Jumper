@@ -1,12 +1,10 @@
-class word:
+class Word:
 
-    def __init__(self, wordCSV):
+    def __init__(self):
         #Open file, populate a list.
         with open("formatted_data.csv", "r") as file:
             wordCSV = next(file)
         self._words = [wordCSV]
-        print(self._words)
-
 
     def createEasy(self): #3-5 word length
         return self._filterList(3,5)
