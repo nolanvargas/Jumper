@@ -18,7 +18,6 @@ class Jumper:
         self._health -= 1
         if self._health == 0:
             self._jumper['head'] = 'x'
-        return self._health
 
 
     def get_health(self):
