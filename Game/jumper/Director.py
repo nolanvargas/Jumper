@@ -6,7 +6,7 @@ class Director:
 
     def __init__(self):
         self.jumper = Jumper()
-        self.word = Word()
+        self.wordStart = Word()
         #["_" for i in self.word]
         self.difficulty = 0
         self.guesses = []
@@ -18,11 +18,11 @@ class Director:
         self.update_difficulty(self.difficulty)
         
         if self.difficulty == "easy":
-            self.word = Word.create_easy(self)
+            self.word = Word.create_easy(self.wordStart)
         elif self.difficulty == "normal":
-            self.word = Word.create_normal(self)
+            self.word = Word.create_normal(self.wordStart)
         elif self.difficulty == "hard":
-            self.word = Word.create_hard(self)
+            self.word = Word.create_hard(self.wordStart)
 
 
         self.display_word = ["_"] * len(self.word)
