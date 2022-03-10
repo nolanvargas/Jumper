@@ -3,7 +3,7 @@ class Word:
     def __init__(self):
         self._wordsProcessed = []
         #Open file, populate a list.
-        with open("jumper/formatted_data.csv", "r") as file:
+        with open("formatted_data.csv", "r") as file:
             self._wordsRaw = file.readlines()[1:]
             for item in self._wordsRaw:
                 self._wordsProcessed.append(item.split("," , 1))
