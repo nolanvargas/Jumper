@@ -1,3 +1,4 @@
+import random
 class Word:
 
     def __init__(self):
@@ -8,13 +9,13 @@ class Word:
             for item in self._wordsRaw:
                 self._wordsProcessed.append(item.split("," , 1))
 
-    def createEasy(self): #3-5 word length
+    def create_easy(self): #3-5 word length
         return self._filterList(3,5)
 
-    def createNormal(self): #6-8 word length
+    def create_normal(self): #6-8 word length
         return self._filterList(6,8)
 
-    def createHard(self): #9+ word length
+    def create_hard(self): #9+ word length
         return self._filterList(9,99)
 
     def _filterList(self, minLength, maxLength):
@@ -22,4 +23,5 @@ class Word:
         for item in self._wordsProcessed:
             if len(item[0]) >= minLength and len(item[0]) <= maxLength:
                 self.diff_list.append(item[0])
+        self.wordfromList = random.choice(self.diff_list)
         return self.diff_list

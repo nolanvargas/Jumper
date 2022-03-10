@@ -16,6 +16,15 @@ class Director:
         self.prompt = "What difficulty would you like to play at? Easy, Normal, or Hard?"
         self.difficulty = terminalService._getDifficultyInput(self, self.prompt).lower()
         self.update_difficulty(self.difficulty)
+        
+        if self.difficulty == "easy":
+            self.word = Word.create_easy(self)
+        elif self.difficulty == "normal":
+            self.word = Word.create_normal(self)
+        elif self.difficulty == "hard":
+            self.word = Word.create_hard(self)
+
+
         self.display_word = ["_"] * len(self.word)
         self.update()
 
