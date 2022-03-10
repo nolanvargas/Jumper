@@ -1,4 +1,4 @@
-class Jumper:
+class Jumper: #Jumper class is the character and tracks its status
 
     def __innit__(self):
         self._jumper = { # this dictionary is so the jumper can be printed to the terminal

@@ -1,5 +1,5 @@
-from Game.jumper.Word import Word
-from Game.jumper.Jumper import Jumper
+from game.jumper.word import Word
+from game.jumper.jumper import Jumper
 
 class Director:
 
