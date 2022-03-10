@@ -1,16 +1,24 @@
-from jumper.word import Word
-from jumper.jumper import Jumper
+from Game.jumper.Word import Word
+from Game.jumper.Jumper import Jumper
 
 class Director:
 
     def __init__(self):
         self.jumper = Jumper()
         self.word = Word()
-        self.display_word = ["_"] * len(self.word)
         #["_" for i in self.word]
         self.difficulty = 0
         self.guesses = []
         self.is_playing = True
+
+    def start_game(self):
+                
+        self.update_difficulty()
+        self.display_word = ["_"] * len(self.word)
+        self.update()
+
+        while self.is_playing == True:
+            self.update()
 
     def update_difficulty(self, difficulty):
         self.difficulty = difficulty
