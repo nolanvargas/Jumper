@@ -1,4 +1,4 @@
-from game.jumper.director import Director
+from Game.jumper.Director import Director
 
 director = Director()
 director.start_game()

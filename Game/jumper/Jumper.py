@@ -1,6 +1,7 @@
 class Jumper: #Jumper class is the character and tracks its status
 
     def __innit__(self):
+        self._health = 4 # the health of the jumper
         self._jumper = { # this dictionary is so the jumper can be printed to the terminal
                         4: ' ___ ',
                         3: '/___\\',
@@ -10,7 +11,6 @@ class Jumper: #Jumper class is the character and tracks its status
                     'arms': ' /|\\ ',
                     'legs': ' / \\ '
                         }
-        self._health = 4 # the health of the jumper
 
 
     def update_health(self): # updates the health and the self._jumper dictionary
@@ -20,5 +20,8 @@ class Jumper: #Jumper class is the character and tracks its status
             self._jumper['head'] = 'x'
 
 
-    def get_health(self): # gets the health and returns it
-        return self._health
+    def get_health(self): # gets the health and returns a boolean
+        if self._health > 0:
+            return True
+        else:
+            return False
