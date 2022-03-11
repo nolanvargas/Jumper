@@ -26,7 +26,8 @@ class Director:
             self.word = Word.create_hard(self.wordStart)
 
 
-        self.display_word = ['_ ' * len(self.word)]
+        self.display_word = [' _ '] * len(self.word)
+        print(self.word)
 
         while self.is_playing == True:
             print(''.join(self.display_word))
