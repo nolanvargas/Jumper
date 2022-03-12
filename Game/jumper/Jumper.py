@@ -14,7 +14,8 @@ class Jumper: #Jumper class is the character and tracks its status
 
 
     def update_health(self): # updates the health and the self._jumper dictionary
-        self._jumper.pop(self._health)
+
+        self._jumper.pop(f'{self._health}')
         self._health -= 1
         if self._health == 0: # when health is equal to 0 this changes the value in the dictionary so the person looks like they're dead
             self._jumper['head'] = 'x'

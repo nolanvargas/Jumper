@@ -1,6 +1,6 @@
-from Game.jumper.Word import Word
-from Game.jumper.Jumper import Jumper
-from Game.jumper.Terminal_Service import terminalService
+from game.jumper.word import Word
+from game.jumper.Jumper import Jumper
+from game.jumper.terminal_Service import terminalService
 
 class Director:
 
