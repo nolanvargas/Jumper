@@ -1,6 +1,6 @@
-from game.jumper.word import Word
-from game.jumper.Jumper import Jumper
-from game.jumper.terminal_Service import terminalService
+from Game.jumper.Word import Word
+from Game.jumper.Jumper import Jumper
+from Game.jumper.Terminal_Service import terminalService
 
 class Director:
 
@@ -9,20 +9,20 @@ class Director:
         self.wordStart = Word()
         self.terminal = terminalService()
         #["_" for i in self.word]
-        self.difficulty = ''
+        self._difficulty = ''
         self.guesses = []
         self.is_playing = True
 
     def start_game(self):
         self.prompt = "What difficulty would you like to play at (Easy, Normal, or Hard): "
-        self.difficulty = self.terminal._getDifficultyInput(self.prompt).lower()
+        self._difficulty = self.terminal._getDifficultyInput(self.prompt).lower()
         self.update_difficulty(self.difficulty)
         
-        if self.difficulty == "easy":
+        if self._difficulty == "easy":
             self.word = Word.create_easy(self.wordStart)
-        elif self.difficulty == "normal":
+        elif self._difficulty == "normal":
             self.word = Word.create_normal(self.wordStart)
-        elif self.difficulty == "hard":
+        elif self._difficulty == "hard":
             self.word = Word.create_hard(self.wordStart)
 
 
@@ -55,7 +55,7 @@ class Director:
         self.guess = self.terminal._getDifficultyInput('Guess a letter [a-z]: ').lower()
 
     def update_difficulty(self, difficulty):
-        self.difficulty = difficulty
+        self._difficulty = difficulty
 
     def update(self):
         self.guesses.append(self.guess)
